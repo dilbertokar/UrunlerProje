@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "641229806341",
+    "firebase_url": "https://urunlerproje-1a62e.firebaseio.com",
+    "project_id": "urunlerproje-1a62e",
+    "storage_bucket": "urunlerproje-1a62e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641229806341:android:6b1729f4b476123c3b356c",
+        "android_client_info": {
+          "package_name": "com.example.urunlerproje"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641229806341-gl8tm2vj6rb387s4u7cgpg9jj7f3fhqj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.urunlerproje",
+            "certificate_hash": "cdc5ec8992d87e19219273069ffed9fe66df4a3e"
+          }
+        },
+        {
+          "client_id": "641229806341-a0s1dhvnqejt5udtflme1sp3mbg6c3ea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsu89zIVn72iL2k_NGtOGIwRmGggYIAP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641229806341-a0s1dhvnqejt5udtflme1sp3mbg6c3ea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

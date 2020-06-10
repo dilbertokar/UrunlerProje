@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity"
+    android:paddingTop="100dp">
+
+
+    <EditText
+        android:layout_margin="10dp"
+        android:id="@+id/etxt_girismail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="E-mail"
+         />
+
+    <EditText
+        android:layout_margin="10dp"
+        android:id="@+id/etxt_girissifre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Sifre"
+         />
+
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/btngiris"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Giris yap"
+         />
+    <Button
+        android:id="@+id/btnuyeol"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Üye ol"
+        />
+
+</LinearLayout>
