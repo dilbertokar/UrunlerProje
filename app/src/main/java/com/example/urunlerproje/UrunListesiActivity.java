@@ -1,40 +1,28 @@
 package com.example.urunlerproje;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import com.google.android.material.appbar.AppBarLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.GridLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.google.android.gms.dynamic.LifecycleDelegate;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
-import static com.example.urunlerproje.UrunlerAdapter.urunList;
 
 
 public class UrunListesiActivity extends AppCompatActivity {
 
     TextView kullanıcı;
-
-    static FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     GridLayoutManager gm;
     RecyclerView rv ;
@@ -48,27 +36,24 @@ public class UrunListesiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_urun_listesi);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Ürün Listesi");
+        toolbar.setTitle("Firebase Ürünler Uygulaması");
         setSupportActionBar(toolbar);
         toolbar.inflateMenu(R.menu.topmenu);
 
         rv = findViewById(R.id.rv);
-
 
         gm=new GridLayoutManager(this,2);
         gm.setOrientation(GridLayoutManager.VERTICAL);
         rv.setLayoutManager(gm);
 
         kullanıcı = findViewById(R.id.kullanıcı);
-
         kullanıcı.setText("Hoşgeldin "+MainActivity.kullanıcımaili);
 
         urunler = new ArrayList<Urun>();
         keys = new ArrayList<String>();
         favs = new ArrayList<String>();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
-        //DatabaseReference myRef2 = database.getReference();
 
         myRef.child("urunler").addChildEventListener(new ChildEventListener() {
             @Override
@@ -107,8 +92,6 @@ public class UrunListesiActivity extends AppCompatActivity {
 
         adapter = new UrunlerAdapter(this,urunList);
         rv.setAdapter(adapter);
-
-
 
     }
 

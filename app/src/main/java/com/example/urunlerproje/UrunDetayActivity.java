@@ -33,7 +33,9 @@ public class UrunDetayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_urun_detay);
 
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Firebase Ürünler Uygulaması");
+        setSupportActionBar(toolbar);
 
         ViewPager vpPager = (ViewPager) findViewById(R.id.vievpage);
         ViewPagerAdapterr adapterViewPager = new ViewPagerAdapterr(getSupportFragmentManager());

@@ -5,7 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UrunEkleActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,31 +80,52 @@
         </ImageView>
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/etxt_ad"
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ürin adı">
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:indeterminateTint="@color/colorAccent"
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="20"
+            android:visibility="invisible"/>
 
-    </EditText>
-    <EditText
-        android:id="@+id/etxt_fiyat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ürin fiyatı">
+        <EditText
+            android:layout_margin="5dp"
+            android:id="@+id/etxt_ad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ürün adı">
 
-    </EditText>
-    <EditText
-        android:id="@+id/etxt_acıklama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Açıklama">
+        </EditText>
+        <EditText
+            android:layout_margin="5dp"
+            android:id="@+id/etxt_fiyat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ürün fiyatı">
 
-    </EditText>
-    <Button
-        android:id="@+id/btn_urunekle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ekle"></Button>
+        </EditText>
+        <EditText
+            android:layout_margin="5dp"
+            android:id="@+id/etxt_acıklama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Açıklama">
+
+        </EditText>
+        <Button
+            android:layout_margin="5dp"
+            android:id="@+id/btn_urunekle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ekle"></Button>
+
+
+    </LinearLayout>
+
 
 </LinearLayout>

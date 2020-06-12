@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -65,12 +66,17 @@ public class UrunEkleActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase ;
     FirebaseStorage firebaseStorage;
 
+    ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_urun_ekle);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Firebase Ürünler Uygulaması");
+        setSupportActionBar(toolbar);
 
 
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -79,6 +85,7 @@ public class UrunEkleActivity extends AppCompatActivity {
         final DatabaseReference dbRef = firebaseDatabase.getReference().child("urunler");
         final StorageReference ref = firebaseStorage.getReference();
 
+        progressBar = findViewById(R.id.progress);
         image1 = findViewById(R.id.image1);
         image2 = findViewById(R.id.image2);
         image3 = findViewById(R.id.image3);
@@ -96,6 +103,8 @@ public class UrunEkleActivity extends AppCompatActivity {
                 urunad = ad.getText().toString();
                 urunfiyat = Integer.parseInt(fiyat.getText().toString());
                 urunacıklama = acıklama.getText().toString();
+
+                progressBar.setVisibility(View.VISIBLE);
 
                 date = Calendar.getInstance().getTime();
 
@@ -125,6 +134,9 @@ public class UrunEkleActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Uri uri) {
                                 imageurl1 = uri.toString();
+
+                                Toast.makeText(getApplicationContext(),"Resim 1 eklendi.",Toast.LENGTH_SHORT).show();
+
                             }
                         });
 
@@ -139,6 +151,7 @@ public class UrunEkleActivity extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Uri uri) {
                                         imageurl2 = uri.toString();
+                                        Toast.makeText(getApplicationContext(),"Resim 2 eklendi.",Toast.LENGTH_SHORT).show();
                                     }
                                 });
 
@@ -157,17 +170,17 @@ public class UrunEkleActivity extends AppCompatActivity {
                                                 dbRef.push().setValue(new Urun(urunad,urunacıklama,urunfiyat,imageurl1,imageurl2,imageurl3,formattedDate,like)).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
+
                                                         Intent i= new Intent(UrunEkleActivity.this,UrunListesiActivity.class);
                                                         startActivity(i);
+                                                        Toast.makeText(getApplicationContext(),"Resim 3 eklendi.",Toast.LENGTH_SHORT).show();
+                                                        progressBar.setVisibility(View.INVISIBLE);
                                                         finish();
                                                     }
                                                 });
                                             }
 
                                         });
-
-
-
                                     }
                                 });
 
@@ -177,10 +190,10 @@ public class UrunEkleActivity extends AppCompatActivity {
                     }
                 });
 
-                }
-
+            }
 
         });
+
         image1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

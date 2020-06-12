@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".UrunDetayActivity"
     android:orientation="vertical">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vievpage"

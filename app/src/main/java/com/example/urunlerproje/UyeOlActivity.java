@@ -2,6 +2,7 @@ package com.example.urunlerproje;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,10 +27,14 @@ public class UyeOlActivity extends AppCompatActivity {
     String mail;
     String sifre;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uye_ol);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Firebase Ürünler Uygulaması");
+        setSupportActionBar(toolbar);
 
         firebaseAuth = FirebaseAuth.getInstance();
 

@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -23,7 +22,7 @@ public class Fragment1 extends Fragment {
         return fragmentFirst;
     }
 
-    // Store instance variables based on arguments passed
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +30,7 @@ public class Fragment1 extends Fragment {
 
     }
 
-    // Inflate the view for the fragment based on layout XML
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
